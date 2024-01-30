@@ -33,8 +33,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'students',
-    # 'users',
-    # 'crispy_bootstrap5',
+    'users',
+    'crispy_bootstrap5',
     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,8 +128,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = ['bootstrap', 'bootstrap5']
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # settings.py
 # ...

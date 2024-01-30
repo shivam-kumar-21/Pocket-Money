@@ -23,30 +23,34 @@
     </nav>
 
     <!-- Content Section -->
-    <div class="container mt-4">
+        <div class="container mt-4 d-flex flex-column">
 
-        <!-- Page Title -->
-        <h1 class="display-4 mb-4">Welcome to Your Pocket Money Tracker</h1>
+            <!-- Page Title -->
+            <h1 class="display-4 mb-4">Welcome to Your Pocket Money Tracker</h1>
 
-        <!-- Student Profile Section -->
-        <div class="card mb-4">
-            <div class="card-header bg-white">
-                <h2 class="h4 font-weight-bold mb-0">Student Profile</h2>
+
+            <!-- Transaction History Section -->
+            <div class="card">
+                <div class="card-header bg-white">
+                    <h2 class="h4 font-weight-bold mb-0">Transaction History</h2>
+                </div>
+                <div class="card-body">
+                    <!-- Add a table or list to display transaction history -->
+                </div>
             </div>
-            <div class="card-body">
-                <!-- Add form fields for student profile details -->
+
+
+            <!-- Content Block -->
+            <div class="row flex-grow-1">
+                <div class="col-md-8">
+                    {% block content %}{% endblock %}
+                </div>
+                <!-- Add additional columns or adjust grid layout as needed -->
             </div>
+
         </div>
 
-        <!-- Transaction History Section -->
-        <div class="card">
-            <div class="card-header bg-white">
-                <h2 class="h4 font-weight-bold mb-0">Transaction History</h2>
-            </div>
-            <div class="card-body">
-                <!-- Add a table or list to display transaction history -->
-            </div>
-        </div>
+       
 
     </div>
 

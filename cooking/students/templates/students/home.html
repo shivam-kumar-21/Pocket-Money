@@ -14,26 +14,41 @@
 
 <body class="bg-light">
 
-    <!-- Navigation -->
+     <!-- Navigation -->
     <nav class="navbar navbar-dark bg-primary">
         <div class="container">
             <a class="navbar-brand" href="#">Pocket Money Tracker</a>
-            <!-- Add more navigation links or components as needed -->
+            <ul class="navbar-nav ml-auto">
+                {% if user.is_authenticated %}
+                    <!-- Display user-specific content or logout link when the user is authenticated -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    </li>
+                {% else %}
+                    <!-- Display login link when the user is not authenticated -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Login</a>
+                    </li>
+                {% endif %}
+                <!-- Add more navigation links or components as needed -->
+            </ul>
         </div>
     </nav>
-
+    
     <!-- Content Section -->
         <div class="container mt-4 d-flex flex-column">
 
             <!-- Page Title -->
             <h1 class="display-4 mb-4">Welcome to Your Pocket Money Tracker</h1>
-
+            
 
             <!-- Transaction History Section -->
             <div class="card">
                 <div class="card-header bg-white">
                     <h2 class="h4 font-weight-bold mb-0">Transaction History</h2>
                 </div>
+                 
+
                 <div class="card-body">
                     <!-- Add a table or list to display transaction history -->
                 </div>

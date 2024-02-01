@@ -11,3 +11,4 @@ def about(request):
     return render (request, 'students/about.html', {
         'students': Student.objects.all()
     })
+

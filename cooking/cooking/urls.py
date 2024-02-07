@@ -17,14 +17,17 @@ Including another URLconf
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
-
+from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),                  # index / home / root
     path('', include('students.urls')),
     path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
-    path('login/add_student/', include('users.urls')),
-    path('login/', include('users.urls')),
+    path('', include('users.urls')),
+    # path('', include('users/url'))
+    # path('profile/', user_views.ProfileView.as_view(template_name='students/student_info.html'), name='profile'),
+    # A user is not allowed to authenticate or use the admin site 
+    #Entering the django shell can accesss admin page
 
 ]

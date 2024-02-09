@@ -14,7 +14,7 @@ def about(request):
     })
 
 def student_details_list(request):
-    student_details_list = Student_Detail.objects.all()
+    student_details_list = Student.objects.all()
     return render(request, 'students/student_details_list.html', {
         'student_details_list': student_details_list          
     })

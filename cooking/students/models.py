@@ -11,12 +11,12 @@ class Student(models.Model):
 
 
 class Student_Detail(models.Model):
-    student = models.OneToOneField(Student, on_delete = models.CASCADE)
-    weekly_pay = models.DecimalField(max_digits = 5,decimal_places=2, null=True, blank=True)
+    student = models.OneToOneField(Student, on_delete = models.CASCADE, primary_key=True)
+    weekly_pay = models.DecimalField(max_digits = 10,decimal_places=2, null=True, blank=True)
     last_paid_date = models.DateField(null = True, blank= True)
-    last_paid_amount = models.DecimalField(max_digits = 5,decimal_places=2, null=True, blank=True)
+    last_paid_amount = models.DecimalField(max_digits = 10,decimal_places=2, null=True, blank=True)
     total_paid_amount = models.DecimalField(max_digits=10, decimal_places=2, default=0)
-    payment_date = models.DateField()
+    payment_date = models.DateField(null = True, blank= True)
     remaining_balance = models.DecimalField(max_digits=10, decimal_places=2, default=0)
     transaction_history = models.TextField(blank=True)
     additional_info = models.TextField(blank=True)
@@ -32,4 +32,4 @@ class Student_Detail(models.Model):
         self.remaining_balance -= amount
         transaction_info = f"{date}: Paid {amount} - {description}\n"
         self.transaction_history += transaction_info
-        
+        return f'{self.last_paid_amount} {self.last_paid_date}'
